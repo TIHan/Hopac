@@ -5,7 +5,11 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Hopac.Core is really only intended to be used by the main Hopac library.
+#if __IOS__
+[assembly: InternalsVisibleTo("Hopac.Touch")]
+#else
 [assembly: InternalsVisibleTo("Hopac")]
+#endif
 
 [assembly: AssemblyTitle("Hopac.Core")]
 [assembly: AssemblyDescription(Hopac.CommonAssemblyInfo.Description)]

@@ -15,31 +15,136 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>DEBUG;__IOS__</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>__IOS__</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Reference Include="FSharp.Core" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="..\Hopac.Core\Assembly.cs">
+      <Link>Assembly.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Communication\Ch.cs">
+      <Link>Communication\Ch.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Communication\IVar.cs">
+      <Link>Communication\IVar.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Communication\Latch.cs">
+      <Link>Communication\Latch.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Communication\Lock.cs">
+      <Link>Communication\Lock.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Communication\MVar.cs">
+      <Link>Communication\MVar.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Communication\Mailbox.cs">
+      <Link>Communication\Mailbox.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Communication\Promise.cs">
+      <Link>Communication\Promise.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Communication\WaitQueue.cs">
+      <Link>Communication\WaitQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Engine\Handler.cs">
+      <Link>Engine\Handler.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Engine\Proc.cs">
+      <Link>Engine\Proc.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Engine\Scheduler.cs">
+      <Link>Engine\Scheduler.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Engine\StaticData.cs">
+      <Link>Engine\StaticData.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Engine\Timer.cs">
+      <Link>Engine\Timer.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Engine\Work.cs">
+      <Link>Engine\Work.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Engine\Worker.cs">
+      <Link>Engine\Worker.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\External\BeginEnd.cs">
+      <Link>External\BeginEnd.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\External\Tasks.cs">
+      <Link>External\Tasks.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Flow\Cont.cs">
+      <Link>Flow\Cont.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Flow\Job.cs">
+      <Link>Flow\Job.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Flow\Combinators\ParTuple.cs">
+      <Link>Flow\Combinators\ParTuple.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Selective\Alt.cs">
+      <Link>Selective\Alt.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Selective\Always.cs">
+      <Link>Selective\Always.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Selective\Else.cs">
+      <Link>Selective\Else.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Selective\Nack.cs">
+      <Link>Selective\Nack.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Selective\Pick.cs">
+      <Link>Selective\Pick.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Selective\Zero.cs">
+      <Link>Selective\Zero.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Util\AggressiveInlining.cs">
+      <Link>Util\AggressiveInlining.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Util\Condition.cs">
+      <Link>Util\Condition.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Util\SpinlockMCS.cs">
+      <Link>Util\SpinlockMCS.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Util\SpinlockTTAS.cs">
+      <Link>Util\SpinlockTTAS.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Util\SpinlockTicket.cs">
+      <Link>Util\SpinlockTicket.cs</Link>
+    </Compile>
+    <Compile Include="..\Hopac.Core\Util\WorkQueueLock.cs">
+      <Link>Util\WorkQueueLock.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Communication\" />
+    <Folder Include="Engine\" />
+    <Folder Include="External\" />
+    <Folder Include="Flow\" />
+    <Folder Include="Selective\" />
+    <Folder Include="Util\" />
+  </ItemGroup>
 </Project>

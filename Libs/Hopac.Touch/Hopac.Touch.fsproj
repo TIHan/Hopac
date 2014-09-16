@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -41,13 +41,22 @@
     <Reference Include="FSharp.Core" />
     <Reference Include="monotouch" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Component1.fs" />
-    <Compile Include="Script.fsx" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="..\Hopac\Assembly.fs">
+      <Link>Assembly.fs</Link>
+    </Compile>
+    <Compile Include="..\Hopac\Hopac.fsi">
+      <Link>Hopac.fsi</Link>
+    </Compile>
+    <Compile Include="..\Hopac\Hopac.fs">
+      <Link>Hopac.fs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hopac.Core.Touch\Hopac.Core.Touch.csproj">
+      <Project>{58EFB838-5C98-4ECD-9B6C-CB6572FAFD03}</Project>
+      <Name>Hopac.Core.Touch</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
